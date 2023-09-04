@@ -1,0 +1,66 @@
+:root {
+    --main-color-1: #1e293b;
+    --text-color-1: #e2e8f0;
+    --background-color: #9ca3af;
+    --border-color: #fafafa;
+    --main-content: #475569;
+}
+
+#content {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: var(--background-color)
+};
+
+.header {
+    display: grid;
+    grid-template: auto 1fr;
+}
+
+.header , .footer {
+    background-color: var(--main-color-1);
+    color: var(--text-color-1);
+    text-align: center;
+}
+
+.nav-bar {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-items: center;
+    gap: 1rem;
+    padding: 0 2rem;
+    box-shadow: 0 0 4px 4px var(--main-color-1);
+
+}
+
+.nav-bar > * {
+    border: solid 2px var(--border-color);
+    border-bottom: 0;
+    width: 100%;
+    padding: 0.2rem 0;
+}
+
+.header > .title {
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.footer {
+    border-top: 1px solid var(--border-color);
+    padding: 0.5rem 0;
+}
+
+.main {
+    display: grid;
+    place-items: center;
+    margin: 1rem 0;
+}
+
+.main > .content {
+    min-height: 100%;
+    width: 80%;
+    background-color: var(--main-content);
+    border-radius: 1rem;
+    box-shadow: 0 0 4px 2px var(--main-color-1);
+}
