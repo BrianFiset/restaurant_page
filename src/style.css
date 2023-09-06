@@ -4,6 +4,12 @@
     --background-color: #9ca3af;
     --border-color: #fafafa;
     --main-content: #475569;
+    --btn-color: #0ea5e9;
+    --btn-hover: #0284c7;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 #content {
@@ -11,11 +17,6 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
     background-color: var(--background-color)
-};
-
-.header {
-    display: grid;
-    grid-template: auto 1fr;
 }
 
 .header , .footer {
@@ -24,26 +25,41 @@
     text-align: center;
 }
 
+.header {
+    padding: 0.5rem 0;
+}
+
 .navbar {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    justify-items: center;
+    display: flex;
+    justify-content: center;
     gap: 1rem;
     padding: 0 2rem;
     box-shadow: 0 0 4px 4px var(--main-color-1);
 
 }
 
-.navbar > * {
-    border: solid 2px var(--border-color);
-    border-bottom: 0;
-    width: 100%;
-    padding: 0.2rem 0;
+.navbar > div:nth-child(1) > .text {
+    border-bottom: solid 2px var(--border-color);
 }
 
-.header > .title {
-    font-size: 2rem;
-    padding: 1rem 0;
+.navbar > div {
+    width: 12ch;
+    padding: 0.2rem 0;
+    height: 2rem;
+}
+
+.navbar > div > .text:hover {
+    margin-top: -2px;
+    transition: 0.3s;
+}
+
+.navbar .text {
+    font-size: 1.5rem;
+}
+
+.navbar .text:hover {
+    cursor: pointer;
+    color: var(--background-color);
 }
 
 .footer {
@@ -59,8 +75,94 @@
 
 .main > .content {
     min-height: 100%;
-    width: 80%;
+    margin: 0 10%;
     background-color: var(--main-content);
     border-radius: 1rem;
     box-shadow: 0 0 4px 2px var(--main-color-1);
+}
+
+.image-container {
+    border: 2px solid var(--main-color-1);
+    height: 300px;
+    border-radius: 50%;
+}
+
+.top-section > .title {
+    font-size: 2rem;
+}
+
+.top-section > .subheading {
+    font-size: 1.3rem;
+}
+
+.main-img {
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    
+}
+
+.top-section, .middle-section {
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+    color: var(--text-color-1);
+}
+
+.middle-section > .title{
+    font-size: 1.5rem;
+}
+
+.display-food{
+    display: flex;
+    justify-content: space-around;
+    height: 300px;
+    width: 100%;
+    padding:0 2rem 2rem;
+    gap: 1rem;
+}
+
+.food-container {
+    display: grid;
+    grid-template-rows: 1fr auto auto;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.food-container > .img-container {
+    border: solid 2px var(--main-color-1);
+    border-radius: 20%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.food-container > .title{
+    font-size: 1.3rem;
+}
+
+.food-container > .subheading{
+    width: 30ch;
+}
+
+.explore-btn {
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    border: solid 2px var(--main-color-1);
+    background-color: var(--btn-color);
+    color: var(--text-color-1);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.explore-btn:hover {
+    cursor: pointer;;
+    background-color: var(--btn-hover);
+}
+
+
+.title {
+    font-weight: 600;
 }
