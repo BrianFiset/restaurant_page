@@ -1,4 +1,5 @@
 import { createDiv , appendElement, createImg , createBtn} from "./functions.js";
+import { menuBtn } from "./pageLoad.js";
 import Img from '../images/owner.jpeg';
 import Brownies from '../images/brownie-marihuana-hierba-scaled.jpg';
 import Cookies from '../images/cookies.jpg';
@@ -53,4 +54,5 @@ function createMiddleSection() {
 export default function loadHome() {
     createTopSection();
     createMiddleSection();
+    menuBtn();
 };
