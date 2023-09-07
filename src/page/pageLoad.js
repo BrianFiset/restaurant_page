@@ -1,5 +1,6 @@
 import {default as loadHome} from './homepage.js';
-import menuPage, {default as loadMenu} from './menuPage.js';
+import{default as loadMenu} from './menuPage.js';
+import {default as loadContact} from './contactPage.js';
 
 import {createDiv, appendElement, clearMainContent} from './functions.js';
 
@@ -48,12 +49,13 @@ function changePage() {
     const navbar = document.querySelectorAll('.navbar .text');
     navbar.forEach(item => item.addEventListener('click', (e) => {
         clearMainContent();
+        addActive(e.target);
         if (e.target.textContent === 'Home') {
             loadHome();
-            addActive(e.target);
         } else if(e.target.textContent === 'Menu'){
-            menuPage();
-            addActive(e.target);
+            loadMenu();
+        }  else if(e.target.textContent === 'Contact'){
+            loadContact();
         };
     }));
     
@@ -65,7 +67,7 @@ export function menuBtn() {
     const btn = document.querySelector('.explore-btn');
     btn.addEventListener('click', () => {
         clearMainContent();
-        menuPage();
+        loadMenu();
         addActive(menu);
     })
 }
@@ -80,6 +82,6 @@ export default function loadPage() {
     createHeader();
     createMain();
     createFooter();
-    menuPage();
+    loadHome();
     changePage();
 }
